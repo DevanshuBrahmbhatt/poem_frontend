@@ -77,8 +77,11 @@ methods:{
 
 submitDetails: function () {
 const poem=document.getElementById('poem').value
-axios.post('https://devanshuwrite.herokuapp.com/addpoem',{poem:poem});
- 
+axios.post('https://devanshuwrite.herokuapp.com/addpoem',{poem:poem})
+//  .then(response => {
+//                         console.log(response.data);
+//                 })
+//                 .catch(err => console.log(err));
         },
 
   }

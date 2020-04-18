@@ -79,8 +79,11 @@ methods:{
 submitDetails: function () {
 const username=document.getElementById('username').value
 const password=document.getElementById('password').value
-axios.post('https://devanshuwrite.herokuapp.com/addlogin',{username:username, password:password });
- 
+axios.post('https://devanshuwrite.herokuapp.com/addlogin',{username:username, password:password })
+//  .then(response => {
+//                         console.log(response.data);
+//                 })
+//                 .catch(err => console.log(err));
         },
 
   }
