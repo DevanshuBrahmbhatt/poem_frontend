@@ -36,7 +36,7 @@
       </div>
 
   <v-container>
-      <div  class="subtitle-1 font-weight-black " style="font-size:20px !important, text-align:left !important;" v-text="item.poem"  ><br><br>
+      <div  class="subtitle-1 font-weight-black" style="font-size:20px!important; text-align:center!important;" v-text="item.poem"  ><br><br>
            
  </div>
  </v-container>
