@@ -7,6 +7,7 @@ import home from '../views/home.vue'
 Vue.use(VueRouter)
 
 const routes = [
+  
   {
     path: '/',
     name: 'home',
@@ -27,6 +28,8 @@ const routes = [
   ]
   
   const router = new VueRouter({
+    base: process.env.BASE_URL,
+    linkActiveClass: 'active',
     routes
   })
   

@@ -26,9 +26,18 @@
                    </v-toolbar>
               <v-card-text>
 
+                   <v-text-field
+                    label="Login"
+                    name="username"
+                    type="text"
+                    id="username"
+                  
+                  />
+
+
                
                   <v-text-field
-                   class="form-control"
+                 
                     label="poem"
                     name="poem"
                     type="text"
@@ -37,7 +46,7 @@
                  
                     
                   />
-    <v-btn color="primary" name="submit" v-on:click="submitDetails" type="submit" >Add</v-btn>
+    <v-btn color="primary" name="submit" v-on:click="submitProduct" type="submit" >Add</v-btn>
    
                  
               
@@ -57,6 +66,7 @@
 
 <script>
 import axios from 'axios'
+// import VueRouter from 'vue-router'
 
   export default {
   mounted() {
@@ -68,6 +78,7 @@ import axios from 'axios'
     return {
       
       poem:'',
+      username:''
       
     };
   },
@@ -75,13 +86,17 @@ import axios from 'axios'
 
 methods:{
 
-submitDetails: function () {
+submitProduct: function () {
 const poem=document.getElementById('poem').value
-axios.post('https://devanshuwrite.herokuapp.com/addpoem',{poem:poem})
-//  .then(response => {
-//                         console.log(response.data);
-//                 })
-//                 .catch(err => console.log(err));
+const username=document.getElementById('username').value
+
+axios.post("https://devanshuwrite.herokuapp.com/addpoem",{username:username,poem:poem})
+ .then(response => {
+                      this.$router.push('/');
+                        console.log(response.data);
+
+                })
+                .catch(err => console.log(err));
         },
 
   }

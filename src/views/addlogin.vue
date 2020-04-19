@@ -43,7 +43,7 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer />
-              <v-btn color="primary" name="submit" v-on:click="submitDetails" type="submit" >Add</v-btn>
+              <v-btn color="primary" name="submit" v-on:click="submitProduct" type="submit" >Add</v-btn>
    
              </v-card-actions>
             </v-card>
@@ -76,14 +76,15 @@ import axios from 'axios'
 
 methods:{
 
-submitDetails: function () {
+submitProduct: function () {
 const username=document.getElementById('username').value
 const password=document.getElementById('password').value
-axios.post('https://devanshuwrite.herokuapp.com/addlogin',{username:username, password:password })
-//  .then(response => {
-//                         console.log(response.data);
-//                 })
-//                 .catch(err => console.log(err));
+axios.post("https://devanshuwrite.herokuapp.com/addlogin",{username:username, password:password })
+ .then(response => {
+                         this.$router.push('/addpoem');
+                         console.log(response.data);
+                })
+                .catch(err => console.log(err));
         },
 
   }
