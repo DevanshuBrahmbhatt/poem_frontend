@@ -27,8 +27,16 @@
               <v-card-text>
 
                
+
                   <v-text-field
-                   class="form-control"
+                    label="Login"
+                    name="username"
+                    type="text"
+                    id="username"
+                  />
+               
+                  <v-text-field
+
                     label="poem"
                     name="poem"
                     type="text"
@@ -37,7 +45,7 @@
                  
                     
                   />
-    <v-btn color="primary" name="submit" v-on:click="submitDetails"  >Add</v-btn>
+    <v-btn color="primary" name="submit" v-on:click="submitDetails" type="submit" >Add</v-btn>
    
                  
               
@@ -68,6 +76,7 @@ import axios from 'axios'
     return {
       
       poem:'',
+      username:'',
       
     };
   },
@@ -77,8 +86,10 @@ methods:{
 
 submitDetails: function () {
 const poem=document.getElementById('poem').value
-axios.post('https://devanshuwrite.herokuapp.com/addpoem',{poem:poem})
+const username=document.getElementById('username').value
+axios.post('https://devanshuwrite.herokuapp.com/addpoem',{username:username,poem:poem})
  .then(response => {
+                        this.$router.push('/');
                         console.log(response.data);
                 })
                 .catch(err => console.log(err));
