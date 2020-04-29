@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar
       app
-      color="primary"
+      color="#5d3225"
       dark
     >
       <div class="d-flex align-center">
@@ -48,6 +48,6 @@ export default {
 #app {
 font-family: 'Roboto', sans-serif;
   font-size: 25px;
-  background:#F5F5F5;
+  background:#5d3225;
 }
 </style>
